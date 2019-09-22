@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular-Firestore": {
+    "Angular-firestore": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Angular-Firestore",
+            "outputPath": "dist/Angular-firestore",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -63,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Angular-Firestore:build"
+            "browserTarget": "Angular-firestore:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Angular-Firestore:build:production"
+              "browserTarget": "Angular-firestore:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular-Firestore:build"
+            "browserTarget": "Angular-firestore:build"
           }
         },
         "test": {
@@ -111,15 +112,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Angular-Firestore:serve"
+            "devServerTarget": "Angular-firestore:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Angular-Firestore:serve:production"
+              "devServerTarget": "Angular-firestore:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "Angular-Firestore"
+  "defaultProject": "Angular-firestore"
 }

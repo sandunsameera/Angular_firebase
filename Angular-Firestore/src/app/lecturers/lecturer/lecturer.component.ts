@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import {LecturerService} from 'src/app/shared/lecturer.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-lecturer',
   templateUrl: './lecturer.component.html',
@@ -11,7 +12,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class LecturerComponent implements OnInit {
 
   constructor(private service: LecturerService,
-    private firestore:AngularFirestore) { }
+    private firestore:AngularFirestore,
+    private toastr:ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
@@ -37,6 +39,7 @@ onSubmit(form:NgForm){
   else
     this.firestore.doc('Lecturers/' + form.value.id).update(data);
   this.resetForm(form);
+  this.toastr.success('Submitted successfully','Lecturer Register');
 }
 
 }
