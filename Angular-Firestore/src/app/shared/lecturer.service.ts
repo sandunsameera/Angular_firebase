@@ -9,4 +9,8 @@ export class LecturerService {
   formData: Lecturer;
 
   constructor(private firestore: AngularFirestore) { }
+
+  getLecturers(){
+    return this.firestore.collection('Lecturers').snapshotChanges();
+  }
 }
