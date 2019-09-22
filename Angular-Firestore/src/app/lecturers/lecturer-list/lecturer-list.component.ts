@@ -26,4 +26,10 @@ export class LecturerListComponent implements OnInit {
     )
   }
 
+  onEdit(lec:Lecturer){
+
+    this.service.formData = Object.assign({},lec);
+
+  }
+
 }
